@@ -1,0 +1,66 @@
+	Excercise 1
+
+1. create a Product class with id, name, price and description with getter and setter emthods
+
+2. create a ProductDAO and ProductDAOImpl class with below methods
+
+		public void addProduct(Product p);
+		public void deleteProduct(int id);
+		public void updateProduct(Product p);
+		public void Product fetchproductById(int id);
+		public List<Product> fetchAllProducts();
+		
+3. All database logic should be there in step 2 methods
+
+4. Create a ProductService and ProductServiceImpl class with below methods and each method should call its respective DAO method
+
+		public void addProduct(Product p);
+		public void deleteProduct(int id);
+		public void updateProduct(Product p);
+		public void Product fetchproductById(int id);
+		public List<Product> fetchAllProducts();
+
+5. write a 5 test programs for each methods..... . 
+For the test program of fetchproductById(int id), display the returned product in test program
+For the test program of fetchAllProducts(), display the returned List of products in test program
+
+		Excercise 2
+
+1. Create a ProductDiscount class with name and discount variable getter and setter methods.
+
+2. create ProductDiscountService and productDiscountServiceImpl classes
+
+	public void Synchronized validateDiscount(ProductDiscount pd){
+		//set product nbame and discount
+		notify()
+	}
+	
+	public void Synchronized applyDiscount(ProductDiscount pd){
+		//if name==null  and discount <=0
+			wait()
+		 
+        //perform discount logic 
+        // update the product row in database with discounted price whose product has the name		
+		
+	} 
+
+3. ValidateDiscountThread class with parameterized constructor of ProductDiscount and ProductDiscountService 
+		
+			run method call the validateDiscount() method of ProductDiscountService by passing ProductDiscount
+
+
+4. ApplyDiscountThread class with parameterized constructor of ProductDiscount and ProductDiscountService 
+		
+			run method call the applyDiscount() method of ProductDiscountService by passing ProductDiscount		
+
+5. Test program
+
+				create a ProductDiscount obj
+				create a ProductDiscountService Obj
+				
+				create a ValidateDiscountThread obj by calling parameterized constructor of ProductDiscountobj and ProductDiscountService Obj
+				
+				create a ApplyDiscountThread obj by calling parameterized constructor of ProductDiscountobj and ProductDiscountService Obj
+				
+				start both threads
+				

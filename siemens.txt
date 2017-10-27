@@ -1,0 +1,817 @@
+			Day 1
+Install JDK 1.8 
+Install Eclipse Neon
+
+
+JDK 1.4
+1.5
+1.6
+1.7
+1.8  Latest Version
+
+
+src -> eclipse -> represents source, where you can place your java files
+1. To create a java class,
+
+Select src- > right click -> 
+
+
+Java is a 2 step process
+1. Compilation
+javac HelloWorld
+
+--> HelloWorld.class
+
+2. Execution
+java HelloWorld
+
+
+If javac is not recognized,
+
+set JAVA_HOME=C:\Program Files (x86)\Java\jdk1.8.0_121;
+
+set PATH=%PATH%;C:\Program Files (x86)\Java\jdk1.8.0_121\bin;
+
+To open class fles, you can use
+either cavaj, DJ compiler or jd copiler,
+
+Java is a Platform Independent Language
+
+
+	Data Types
+Purpose: to store information
+
+byte, short, int, long -> numeric values
+float, double -> decimal values
+char -> single characters
+boolean -> true or false values
+
+Create all data Types and write the informatio in console 
+
+
+		Method
+
+Accessspecifiers returntype methodname (arguments) {
+
+
+
+
+	return ......;
+}
+
+		Excercise
+
+1. Create a method with name salaryHike and accepting arguements double salary and int hike
+
+2. perform business logic like below
+
+salary = salary + (salary *hike/100);
+
+3. return the final hiked salary to main method
+
+4. display the final salary in main method  
+
+
+	Conditional Statements
+
+if ifelse switch
+
+
+	Excercise
+
+
+
+
+1. inside salaryHike methof
+
+if, elseif and else...
+
+hike < 5 display bad....
+
+hike <10  display average
+
+hike < 15 good
+
+hike <20  very good
+
+	Excercise
+
+1. Create experience variable as int datatype in main method
+
+2. pass experience to salaryHike method
+
+3. salaryHike should be perfrmed only if experience is lessthan 5 and salary is lessthan 500000
+
+	Create an Objects
+
+1. create emp2 and emp3 objects and provide some values and print
+
+
+		Excercise
+
+1. Create a Address class with private variables addressId, address1, address2, street, city, zipcode
+
+2. provide getter and setter methods to each variable
+
+3. add new address variable in Employee class
+
+private Address address;
+//Association Design pattern, a class contans refrence //of another class
+
+4. provide getter and setter methods for address variable
+
+5. write toStrng method in Address
+
+6. In EmployeeTest, create Address object and set that address object to emp1
+
+7. get the address object from emp1 
+
+
+	Looping Statements
+
+
+for loops, while, do-while loops
+
+
+	Excercise
+
+1. Find sum of even numbers which occurs from 1 to 100
+ using for loop
+
+  a. exclude 50 in that list using continue keyword
+  b. ignore all the numbers after 80 using break 
+
+	for (int i=) {
+	}	
+
+
+	Arrays
+
+Single Dimentional Array and Multiple Dimentional Array
+
+	Excercise
+
+1. Create a Employee Array which can contain maximum 3 employees
+
+2. create 3 employee objects and add to employee array.
+
+3. repeat the employee array and calculate the sum of all employees salary and sum of all employess hiked salary 
+
+
+	packages
+
+To group related functionalities into one particular folder
+	
+	command line arguments
+
+java HelloWorld 100 200 ABC dsfdsf
+
+		OOPS Concepts 
+
+	Object Oriented Programming
+
+java is a 100% OOPS Language 
+Design Principles
+
+
+datahiding
+	using prvate variables. State of an object 	whould not be exposed outside of that class
+
+encapsulation
+	Wrapping of Data and functions together into a 	single unit 
+
+inheritance
+	obtaining properties from its parent classes.
+
+
+		Vehicle
+
+vehicleId
+VehicleName
+price
+//setters and getters
+
+Car			Bike
+
+drive()			drive()
+
+Abstraction
+Polymorphism
+
+
+			Day 2
+
+Method Overriding
+	it has the Same method signature and presents 	in both parent and child classes
+
+Method Overloading
+	it has the same method name but different 	signature and presents in the same class
+
+Polymorphism
+	Specifies same name and multiple forms/multiple 	implementations
+	
+	Method Overloading and Method Overriding are 		called as a Polymorphisms
+	
+	Method Overloading is called a compile time 		polymorphism
+
+	Method Overriding is a run time polymorphism
+	
+Abstraction
+
+	It will specify only essential features (entire 	method signature) with out informing any inner 	details (implemetation).
+
+	It can contain Abstract methods and non-	abstract methods..
+
+	will use the keyword extends 
+
+	Only one abstract class is allowed as a parent	
+
+	Excercise
+
+1. create 2 more abstract method in Calculator
+like multiply and divide
+
+2. implement those abstract methods in child class
+
+3. Call those methods from test program
+
+	Real Time Example
+
+1. create a EmployeeService abstract class
+
+2. Provide the below abstract methods
+
+public abstract void insertEmployee(Employee emp);
+public abstract void deleteEmployee(int empId);
+public abstract void updateEmployee(Employee emp);
+public abstract void fetchEmployeeById(int empId);
+public abstract void fetchAllEmployees();
+
+3. Create a EmployeeServiceImpl class and provide EmployeeService as a parent class
+
+4. implement all methods (as of now, provide SYSOUT)
+
+5. Write a test program and call all methods using
+EmployeeService empService = new EmployeeServiceImpl()
+
+
+Interface
+
+	It will specify only essential features (entire 	method signature) with out informing any inner 		details (implemetation).
+	
+	Interface can have only abstract methods. 
+
+	will use the keyword implements
+
+	you can implement more than one class as a 		parent classes
+
+	by default, all methods are abstract in 		interfaces
+
+	by default, all variables are constant. you 		can't modify those values
+
+Modularization
+
+	Dividing your applcaton into different logical 	parts
+	reusabiliity
+
+		Excercise
+
+1. create a Mobile class with id , name, price 
+2. create a MobileService abstract class and MobileServiceImpl class
+
+	addMobile(Mobile mobile)
+	deletMobile(int mobileId)
+	fetchMobileById(int mobileId)
+
+3. create a MobileDAO abstract class and MobileDAOImpl class
+
+	addMobile(Mobile mobile)
+	deletMobile(int mobileId)
+	fetchMobileById(int mobileId)
+
+4. provide reference of MobileDAO in MobileServiceImpl
+MobileDAO mobileDAO = new MobileDAOImpl();
+
+5. call dao methods from service method like below:
+	mobileDAO.addMobile(Mobile mobile)
+6. test program and call the service methods.	
+	
+		Access Specifiers
+
+public default private and protected access specifiers
+
+	       Within    OutSdeof  DifferentPKG  difpkg
+	      SameClass   class       subclass
+private
+private int i;    Y        N            N          N
+
+default
+int i;            Y        Y            N          N
+
+protected
+protected int i;  Y        Y            Y          N
+
+public
+public int i;     Y        Y            Y          Y
+
+
+		final Keyword
+
+finnal variables are constants. you can't modify those final variables
+
+final methods : you can't override that method in the child classes
+
+final classes: it can't be madea as a parent class
+
+		static keyword
+
+static variables and static methods
+
+	it belongs to class level 
+	
+	all objects of that class will share the same 		static variable
+	
+	if one object modifies that value, it will 		reflect to all objects of that class
+	
+	static variables and static methods can be 	accessed by class name. you no need to create 	objects
+
+	static methods can call only static methods and 	static variables
+
+		Exception Handling
+
+used to hanlde the exceptions so that application can continue further with out termination 
+
+try
+	is the block where exception can occur in your 	applcation
+
+catch
+	is the block where you will handle the 	exceptions. it should come with try block
+
+finally
+
+	can be used along with try or catch. will 	always be executed if exception occurs or not 	occurs in application 
+
+	try {
+	
+ 	} finally {
+	
+	}
+
+	
+	try {
+
+	} catch () {
+
+	} finally{
+
+	}
+
+throw
+	can be used to throw manual exceptons
+
+throws
+
+	
+		Exception (BaseClass)
+
+
+
+NullPointerException (SC)
+
+
+		Excercise
+
+1. Modify insertEmployee() method in EmployeeServiceImpl class
+	throw Employee exception if empId <=0 
+
+throws keyword needs to be there in both EmployeeService and EmployeeServceImpl method
+
+2. Modify deleteEmployee() method in EmployeeServiceImpl class
+	throw Employee exception if empId <=0
+
+3. Modify fecthEmployeeById() method in EmployeeServiceImpl class
+	throw Employee exception if empId <=0
+
+4. in your EmployeeServcetest handle try, catch , finally keywords 
+
+		Excercise
+
+1. Create MobileException
+
+2. Modify addMobile() method in MobileServiceImpl class to throw Mobile exception if id <=0 
+
+throws keyword needs to be there in both MobileService and MobileServceImpl method
+ 
+3. use try, catch and finally keywords in MobileServiceTest
+	
+		main Method Usage
+
+Use of : public static void main (String[] args)
+
+
+	String Examples
+
+1. Create a String variable with some value
+
+2. Display how many times "a" appears in that string
+
+3. all locations of a in that string 
+
+length -> total length of a string
+			
+		day 3
+
+String Excercise 2:
+
+How to reverse a string
+
+
+StringBuffer
+
+a. ADV: it will not create multiple memory 
+locations and all modifications will happen
+at one particular memory location
+
+b. It is a Synchronized Object
+
+
+StringBuilder
+
+a. ADV: it will not create multiple memory 
+locations and all modifications will happen
+at one particular memory location
+
+b. it is not a synchronized object
+
+ 
+StringTokenizer
+
+	divide your string based on delimeter
+
+		Date Examples
+
+Date
+SimpleDateFormat
+
+		Collections
+
+Drawbacks of Array
+
+1. Array size is fixed and you can't store elements more than specified size
+
+2. It can hold same data type
+
+int a [ ]= new int [10];
+
+
+Collections: used to store multiple values at the same
+
+java.util package
+
+		Collection (Parent Class)
+
+
+List (SC) (I)			Set(SC) (I)
+
+    ArrayList(C)                    HashSet(C)
+    LinkedList (C)		    LinkedHashSet(c)
+    Vector (C)			    TreeSet(C)
+
+
+Vector -> is a Synchronized Object and ArrayList is not a Synchronized Object
+
+Map (it is not a sub class of collection) (I)
+	HashMap (C)
+	LinkedHashMap (C)
+	TreeMap(C)
+	
+
+Wrapper classes
+
+	For every primitive data type, there will be a 	class.
+
+Generics 
+	will restrict the collection so that 
+	collection can hold only one particular Object
+			
+
+		Excercise1
+
+1. Create a List which should accept only String Objects
+
+2. add 5 to 6 objects
+
+3. display the values using normal for loop, enhanced for loops and Iterator approach
+
+		Excercise2
+
+1. Create a List which should accept only Employee Objects
+
+2. add 5 to 6 employee objects
+
+3. display the values using normal for loop, enhanced for loops and Iterator approach
+
+
+
+Set 
+
+	Set does not allow duplicate elemnets
+	
+	Set is not index based and so it will store the 	elemnets in random order
+
+
+TreeSet
+	will always return the sorted order	
+
+	Comparable and Comparator interfaces
+	
+		Excercise
+
+1. create EmployeeNameComparator and write the sorting logic based on name
+
+2. create a TreeSet which takes the EmployeeNameComparator 
+
+3. add the employees
+
+4. displays the employees
+
+
+Map (I) 
+	HashMap
+	LinkedHashMap
+	TreeMap
+
+
+its a key and value pair
+
+
+
+		Excercise
+
+1. create a map which should contain key as integer and value as Employee object
+
+2. print the size of map
+
+3. display all employees along with its key
+ 
+Excercise 1:
+
+Write a Java program to search an element in a array list.
+
+
+Excercse 2:
+
+Sort a given list
+
+		
+		Files
+
+HOw to hanlde Files
+
+java.io package
+
+
+inputstream (I)		
+	read the information from the files
+
+	FileInputStream
+	ObjectInputStream
+
+	read() method is used to read the information
+
+Outputstream(I)
+	write the information into the files
+
+	FileOutputStream
+	ObjectOutputStream
+	
+	write() method is used to write the information
+
+		
+		Excercise
+
+1. copy a file into another file 
+
+
+		Day 4
+
+1. Writing/Persisting Object State into files
+
+	readObject() and writeObject() methods
+
+
+Threads
+	
+	a. Parallel execution can be achieved using 		threads
+
+	b. will run in the background and hence it can 		achieve parallel execution
+
+
+	c. Thread can be created in 2 ways
+		a. Runnable interface
+		b. Thread class
+	
+	d. Runnable interface is the Parent class for 		Thread class and it has the run() method
+
+	public void run();
+
+	
+	e. Thread class contains the start() method, 		which is responsible for starting the thread.	
+
+	f. start() method will internally call the 
+	run () method and executes the business logic 	which is avalable in run method in background.
+
+
+			Excercise
+
+1. Create a BankAccount class with amount varaible and setter and getter methods
+
+2. write deposit and withdraw methods with Amount as a parameter
+
+3. write some business logic inside both the methods.
+
+4. use Thread.sleep in both methods  
+
+5. Create a DepoistThread class (use either Thread or Runnable) with BankAccount variable
+
+	a. DepositThread should have parameterized constructor and should 	accept BankAccount object as a parameter
+	b. write run() method and business logic should  call the 			deposit method of bankaccount class by passing some amount
+
+6. Create a WithdrawThread and follow the same steps of 5. But, in run method you need to call withdraw method of bank account
+
+7. Test program to start both deposit and withdraw threads. use join() method also
+	
+
+Synchronized 
+static Syncrhonized
+synchronization blocks
+
+
+ExecutorService
+
+	Using Executor Services are used to create the 		Thread pools
+	
+	is responsible to execute the threads.
+
+	you no need to call explicitly start() methods
+
+
+Anonymous Inner class
+
+	A class which does not have an object 	
+
+
+	Excercise
+
+1. Create a test program 
+
+2. create ExecutorService varable with fixedThreadPool
+
+3. create anonymous class of Callable interface
+
+	a. callable interface should return Employee 	objects only
+
+	b. create a Employee object in call method and 	return the employee object
+
+6. get the employee object using future.get() method
+
+7. display the employee
+
+
+			Excercise
+
+Producer and COnsumer with Message Object
+
+			Excerice
+
+1. Create a Test program
+
+2. Write the Runnable anonymous class implementation
+
+3. execute the run method
+
+
+4. Write the same Runnable anonymous class implementation using lambda expression
+
+5. execute the run method
+
+
+			DataBases
+
+
+1. First you need to have a database 
+
+create database siemensdb;
+
+
+2. create Employee table to store employee records
+
+create table siemensdb1.employee ( empId int primary key, empName varchar(100), emailId varchar(100), mobile int, salary double );
+
+3. struture of the table
+desc siemensdb1.employee;
+
+4. fetching records from table
+select * from employee;
+
+5. inserting records into table
+
+insert into siemensdb1.employee values ( 10, 'Siemens Emp Name', 'siemensemp@siemens.com' , 6785, 868686);
+
+6. update siemensdb1.employee set mobile=23 where empId=10;
+
+jar -> java archive-> it contains all classes.
+
+		Excercise
+
+1. updateTest
+
+update employee set mobile=23 where empId=10
+
+
+2. deleteTest
+
+delete from employee where empId=10
+
+
+
+
+
+
+
+
+
+
+
+https://github.com/Kasvi-Technologies/Java-Siemens-Oct-2017
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
