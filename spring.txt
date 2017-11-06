@@ -1,0 +1,120 @@
+		Spring
+
+Core Module:
+
+a. You no need to create an object explicitly
+and spring will create an object when ever you need in your application
+
+
+b. you need to register the objects using xml or annotations
+
+c. beans.xml
+
+		Excercise
+
+
+1. Create Employee Bean with id , name and salary felds (getter and setter)
+
+2. register Employee Bean in beans.xml and provide id, name, and salary values
+
+	a. emp1
+
+		
+	b. emp2
+
+
+3. Test program to load emp1 and emp2 objects
+
+		Constructor based DI
+		Setter based DI 
+
+		Excercise
+		
+1. create default and parameterized constructor to Address class
+
+2. create a address bean definiton in xml file using parameterized
+approach
+
+3. create a emp bean definition in xml file with using the address parameterized object
+
+4. Test program to get the bean
+		Excercise
+1. Create EmployeeDAO interface with below methods
+public abstract void insertEmployee(Employee emp);
+public abstract void deleteEmployee(int empId);
+public abstract void updateEmployee(Employee emp);
+public abstract void fetchEmployeeById(int empId);
+public abstract void fetchAllEmployees();
+
+2. create EmployeeDAOImpl with parent class as 	EmployeeDAO, implement all methods (write System.out.println)
+3. create EmployeeService and EmployeeServiceImpl -> similar to step 1 and 2
+
+4. EmployeeServiceImpl should have private EmployeeDAo eDAO with setter and getter methods and methods should use eDao like eDao.addEmployee.....
+6. register both beans in xml, inject employeeDAO to employeeService bean and test program by calling getbean of employeeService	
+	
+	Bean Scopes
+	
+1. singleton
+
+	by default all beans are singleton
+2. prototype
+
+belongs to web applications
+3. request
+
+4. session
+
+	lazy Initializaton
+	a. by default, lazy initialization is disabled. that means, all beans which are registered in xml file will be loaded at starting
+	
+	b. To avoid this, you can specify lazy-init="true", so that bean will not be initialized at start up 
+	and when ever you call getBean method , that time only bean instance will be created in application
+	
+
+	importing xml file
+
+service.xml
+dao.xml
+beans.xml
+
+
+application.xml -> main xml file
+
+	<import resource="service.xml"/>
+	<import resource="dao.xml"/>
+	<import resource="beans.xml"/>
+	
+	
+	depends-on attribute	
+		depends-on="addr"
+	
+	dependency-check
+		simple
+		objects
+		all
+		
+	lazy-init
+		true
+		false
+	
+	scope
+		singleton
+		prototype
+
+	BeanFactory
+	ApplicationContext
+
+
+
+	
+	
+
+
+
+
+
+
+		
+
+
+
