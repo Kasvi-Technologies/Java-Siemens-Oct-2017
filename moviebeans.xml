@@ -1,0 +1,67 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:annotation-config />
+	
+	
+	<bean id="movie" 
+				class="com.siemens.spring.core.Movie">
+		<property name="id" value="100"/>
+		<property name="name" value="ABC"/>
+		<property name="price" value="399"/>
+	</bean>
+	
+	<bean id="theatre" 
+				class="com.siemens.spring.core.Theatre">
+		<property name="id" value="100"/>
+		<property name="name" value="TheatreName"/>
+		<property name="location" value="E-City"/>
+		<property name="movie" ref="movie"/>
+	</bean>
+	
+	<bean id="movieService" 
+	class="com.siemens.spring.service.MovieServceImpl"/>
+	
+	<!-- Example of byName Auto Wiring -->
+	<bean id="theatreByName" 
+				class="com.siemens.spring.core.Theatre"				
+				autowire="byName">
+		 <property name="id" value="100"/> 
+		<property name="name" value="TheatreName"/>
+		<property name="location" value="E-City"/>		
+	</bean>
+		
+	<!-- Example of byType Auto Wiring -->
+	<bean id="theatreByType" 
+				class="com.siemens.spring.core.Theatre"				
+				autowire="byType">
+		<property name="id" value="100"/>
+		<property name="name" value="TheatreName"/>
+		<property name="location" value="E-City"/>		
+	</bean>
+	
+	<!-- Example of constructor Auto Wiring -->
+	<bean id="theatreByCon" 
+				class="com.siemens.spring.core.Theatre"				
+				autowire="constructor">
+		<property name="id" value="100"/>
+		<property name="name" value="TheatreName"/>
+		<property name="location" value="E-City"/>		
+	</bean>
+	
+	<!-- Example of constructor Auto Wiring -->
+	<bean id="theatreByAuto" 
+				class="com.siemens.spring.core.Theatre"				
+				autowire="autodetect">
+		<property name="id" value="100"/>
+		<property name="name" value="TheatreName"/>
+		<property name="location" value="E-City"/>		
+	</bean>
+
+</beans>	
+
