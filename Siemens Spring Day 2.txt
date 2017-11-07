@@ -1,0 +1,127 @@
+	Excercise
+
+1. create a Movie class with id, name and price
+with getter and setters
+
+2. create a Theatre class with id , name, location and movie 
+
+with setter and getters
+
+3. MovieService and MovieService Impl class with fetchMovie(int theatreId)
+
+4. create a moviebeans.xml file with movie bean definition, theatre bean definition (movie variable should refer movie bean )  and MovieServiceImpl bean definition
+
+5. Test program 
+	a. to get the bean of Theatre 
+        b. to get the bean of MovieService
+        c. call the fetchMovie method with theatre id.            Here, Theatre id is obtained from step 5.a
+
+
+
+
+Auto Wiring
+	
+	a. No need to inject dependent objects 	explicitly
+	
+	b. It will automatically inject the dependent 		objects
+
+
+1. byName
+2. byType
+3. constructor
+4. autodetect
+
+
+byName
+
+	will inject the dependent objects based on 	variable name
+
+
+byType
+
+	will inject the dependent objects based on 	reference type
+
+
+@Required
+@Autowired
+@Qualifier
+@PostConstruct
+@PreDestroy
+
+Using below annotations, you no need to register the beans in xml file
+
+@Component
+	Which is used to specify to the java beans
+
+@Service
+	for service classes
+
+@Repository
+	for DAO classes
+
+@Controller -> will discuss on 4th day
+	for controller classes
+
+
+Excercise
+
+1. create a ProductDAO interface with below method
+public void addProduct(Product p)
+
+2. create a ProductDAOmpl class and overide the method
+public void addProduct(Product p)
+
+3. add @Repository("productDAO") annotation
+
+4. create a variable like this in ProductServiceImpl
+
+private ProductDAO productDAO;
+
+//setter and getter methods in ProductServiceImpl
+
+provide below annotations to setter methods
+@Autowired
+@Qualifier("productDAO")
+
+5. modify addProduct method in ProductServiceImpl class like
+       productDAO.addproduct(product);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Configuration
+@Bean
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
