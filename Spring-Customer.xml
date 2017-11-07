@@ -1,0 +1,74 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+   <bean id="customerService" class="com.samples.aop.customerservice.CustomerService" >
+	   	<property name="name" value="Spring Trainer" />
+	   	<property name="url" value="http://Spring.com" />
+   </bean>
+   
+   
+   <!-- Before Advice Example Starts here...  -->
+   
+   <bean id="hijackBeforeMethodBean" class="com.samples.aop.customerservice.HiJackBeforeMethod" />
+ 
+   <bean id="customerServiceeforeMethodProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+ 		<property name="target" ref="customerService" />
+ 
+		<property name="interceptorNames">
+			<list>
+				<value>hijackBeforeMethodBean</value>
+			</list>
+		</property>
+    </bean>
+    
+     <!-- After Advice Example Starts here...  -->
+     
+    <bean id="hijackAfterMethodBean" class="com.samples.aop.customerservice.HijackAfterMethod" />
+ 
+	<bean id="customerServiceAfterMethodProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+	 
+		<property name="target" ref="customerService" />
+	 
+		<property name="interceptorNames">
+			<list>
+				<value>hijackAfterMethodBean</value>
+			</list>
+		</property>
+	   </bean>
+    
+    
+     <!-- Throws Advice example Starts here...  -->
+     
+    <bean id="hijackThrowException" class="com.samples.aop.customerservice.HijackThrowException" />
+ 
+	<bean id="customerServiceThrowExceptionProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+	 
+		<property name="target" ref="customerService" />
+	 
+		<property name="interceptorNames">
+			<list>
+				<value>hijackThrowException</value>
+			</list>
+		</property>
+	   </bean>
+    
+     <!-- Around Advice example Starts here...  -->
+     
+    <bean id="hijackAroundAdvice" class="com.samples.aop.customerservice.HijackAroundAdvice" />
+ 
+	<bean id="customerServiceAroundAdviceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+	 
+		<property name="target" ref="customerService" />
+	 
+		<property name="interceptorNames">
+			<list>
+				<value>hijackAroundAdvice</value>
+			</list>
+		</property>
+	   </bean>
+    
+   
+ 
+</beans>
